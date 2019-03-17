@@ -1,0 +1,92 @@
+<nav id="nav-bar">
+  <a routerLink="/admin-lobby"><button class = "navButton">Dashboard</button></a>
+  <a routerLink="/admin-lobby-games"><button class = "navButton">Game List</button></a>
+</nav>
+<br>
+<div class="search-box">
+    Player Search: <input type=text name="search" placeholder="search" [(ngModel)]="name">
+    <span class="admin-login"><label class="admin-label"><b>Administrator Mode</b>&nbsp;</label><a routerLink="/lobby"><button >Logout</button></a></span>
+    </div>
+
+<br>
+<button id ="add-lobby" (click)="onShowme2()">Add New Lobby</button><br>
+<br>
+<table class="player-lobby">
+    <th>Player</th>
+    <th>Rank</th>
+    <th>Score</th>
+    <th>Time</th>
+    <th>Games Played</th>
+    <th>Status</th>
+    <th> </th>
+  <tr *ngFor="let player of players | playerFilter:name" >
+    <td>{{ player.name }}</td>
+    <td>{{ player.rank }}</td>
+    <td>{{ player.score }}</td>
+    <td>{{ player.time }}</td>
+    <td>{{ player.game }}</td>
+    <td>{{ player.status }}</td>
+    <td ><button (click)="onSelect(player)" id="button">Update</button>
+         <button (click)="deleteRow(player.name)" id="button">Delete</button>
+    </td>
+  </tr>
+</table>
+<br>
+<!--Update menu-->
+<div class="player-container" *ngIf="selectedPlayer && showme">
+    <fieldset>
+      <legend>Player</legend>
+      <div>Player: <input [(ngModel)] = "selectedPlayer.name" placeholder="name"></div>
+      <div>Rank: <input [(ngModel)] = "selectedPlayer.rank" placeholder="rank"></div>
+      <div>Score: <input [(ngModel)] = "selectedPlayer.score" placeholder="score"></div>
+      <div>Time: <input [(ngModel)] = "selectedPlayer.time" placeholder="time"></div>
+      <div>Game: 
+        <select [(ngModel)] = "selectedPlayer.game">
+          <option value="" disabled selected>Select Your Game</option>
+          <option value="Street Fighter V">Street Fighter V</option>
+          <option value="Soul Calibur VI">Soul Calibur VI</option>
+          <option value="Marvel vs Capcom: Infinite">Marvel vs Capcom: Infinite</option>
+          <option value="Tekken 7">Tekken 7</option>
+          <option value="Killer Instinct">Killer Instinct</option>
+        </select>
+      </div>
+      <div>Status: 
+        <select [(ngModel)] = "selectedPlayer.status">
+          <option value="" disabled selected>Select a status</option>
+          <option value="Available">Available</option>
+          <option value="Unavailable">Unavailable</option>
+        </select>
+      </div>
+      <br>
+      <div><button (click)= "onShowme()">Cancel</button></div>
+    </fieldset>
+  </div>
+  <!--Add new lobby menu-->
+  <div class="player-container" *ngIf="!showme2">
+    <fieldset>
+      <legend>Player</legend>
+      <div>Player: <input type="text" [(ngModel)] = "newAttribute.name" placeholder="name"></div>
+      <div>Rank: <input type="text" [(ngModel)] = "newAttribute.rank" placeholder="rank"></div>
+      <div>Score: <input type="text" [(ngModel)] = "newAttribute.score" placeholder="score"></div>
+      <div>Time: <input type="text" [(ngModel)] = "newAttribute.time" placeholder="time"></div>
+      <div>Game: 
+        <select [(ngModel)] = "newAttribute.game">
+          <option value="" disabled selected>Select Your Game</option>
+          <option value="Street Fighter V">Street Fighter V</option>
+          <option value="Soul Calibur VI">Soul Calibur VI</option>
+          <option value="Marvel vs Capcom: Infinite">Marvel vs Capcom: Infinite</option>
+          <option value="Tekken 7">Tekken 7</option>
+          <option value="Killer Instinct">Killer Instinct</option>
+        </select>
+      </div>
+      <div>Status: 
+        <select [(ngModel)] = "newAttribute.status">
+          <option value="" disabled selected>Select a status</option>
+          <option value="Available">Available</option>
+          <option value="Unavailable">Unavailable</option>
+        </select>
+      </div>
+      <br>
+      <div><button (click)= "addRow()">Add</button>&nbsp;<button (click)= "onShowme2()">Cancel</button></div>
+    </fieldset>
+  </div>

@@ -1,0 +1,8 @@
+<div *ngIf="player">
+    <div><span>name: </span>{{ player.name }}</div>
+    <div><span>rank: </span>{{ player.rank }}</div>
+  <label>
+    Player: <input [(ngModel)] = "player.name" placeholder="name">
+  </label>
+</div>
+

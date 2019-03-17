@@ -1,0 +1,14 @@
+DELETE FROM Shipment_T; /* no REM */
+DELETE FROM Equipment_T; /* 7 */
+DELETE FROM Vendor_T; /* 6 */
+DELETE FROM ClientProject_T; /* no REM */
+DELETE FROM Client_T; /* 10 */
+DELETE FROM JobArchive_T; /* no REM */
+DELETE FROM JobTitle_T; /* 5*/
+DELETE FROM Dependent_T; /* 5 */
+DELETE FROM SalariedEmployee_T; /* 10 */
+DELETE FROM ConsultantEmployee_T; /* 10 */
+DELETE FROM SkillTask_T; /* No REM */
+DELETE FROM Project_T; /* 5 */
+DELETE FROM Department_T;/* 5 */
+DELETE FROM Employee_T; /* 10*/

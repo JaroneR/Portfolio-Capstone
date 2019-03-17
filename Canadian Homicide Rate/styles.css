@@ -1,0 +1,135 @@
+body {
+    background-color: darkgray;
+}
+
+.indexLogo{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+}
+
+#intro{
+    text-align: center;
+    color:white;
+    font-size: 30px;
+    font-family: Arial;
+}
+
+#enter{
+    text-align:center;
+    font-size: 30px;
+    font-family: Arial;
+}
+
+#enter a{
+    text-decoration: none;
+    color: white;
+    background-color:red;
+    padding: 10px 30px;
+    display:inline-block;
+}
+
+#enter a:hover{
+    background-color:#ff6666;
+}
+
+#nav a{
+    text-decoration: none;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#nav a:hover{
+    color:black;
+}
+
+.mission {
+    text-align:center;
+    font-family: Arial;
+}
+
+#missionP{
+    font-size:17px;
+}
+
+.info{
+    text-align:center;
+    font-family:Arial;
+}
+
+#infoP{
+    font-size:17px;
+}
+
+.icons{
+    display:inline-block;
+    margin-left: 700px;
+    margin-right:-520px;
+}
+
+.tables{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 30px;
+    text-align:center;
+    font-family:Arial;
+    border-collapse: collapse;
+}
+
+th{
+    color:white;
+    background-color:gray;
+}
+
+tr:hover{
+    background-color: gray;
+}
+
+th, td{
+    border-bottom: 1px solid;
+
+}
+
+td{
+    padding:10px;
+    text-align:left;
+}
+
+th{
+    padding:20px;
+}
+
+h2{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-family:Arial;
+}
+
+#result{
+    font-family: Arial;
+    font-size:17px;
+}
+
+#logo{
+    margin-bottom: 5px;
+}
+
+#form{
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.divClass {
+    margin: 0 auto;
+    width: 65%;
+    height: 65%;
+}
+
+#map{
+    margin-bottom: 50px;
+}

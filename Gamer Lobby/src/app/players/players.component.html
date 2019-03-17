@@ -1,0 +1,39 @@
+
+<div class="search-box">
+    Player Search: <input type=text name="search" placeholder="search" [(ngModel)]="name">
+    <a routerLink="/admin-login"><button class="admin-login">Admin Login</button></a>
+    </div>
+
+<br>
+
+<table class="player-lobby">
+    <th>Player</th>
+    <th>Rank</th>
+    <th>Score</th>
+    <th>Time</th>
+    <th>Games Played</th>
+    <th>Status</th>
+    <th> </th>
+  <tr *ngFor="let player of players | playerFilter:name" >
+    <td>{{ player.name }}</td>
+    <td>{{ player.rank }}</td>
+    <td>{{ player.score }}</td>
+    <td>{{ player.time }}</td>
+    <td>{{ player.game }}</td>
+    <td>{{ player.status }}</td>
+    <td ><button *ngIf="player.status === 'Available'" (click)="onSelect(player)" id="button">Join Game</button></td>
+  </tr>
+</table>
+<br>
+<div class="player-container" *ngIf="selectedPlayer && showme">
+    <fieldset>
+      <legend>Player</legend>
+      <div>Player: {{ selectedPlayer.name }}</div>
+      <div>Rank: {{ selectedPlayer.rank }}</div>
+      <div>Score: {{ selectedPlayer.score }}</div>
+      <div>Time: {{ selectedPlayer.time }}</div>
+      <div>Game: {{ selectedPlayer.game }}</div>
+      <br>
+      <div><button (click)="onJoingame()">Join</button>&nbsp;<button (click)= "onShowme()">Cancel</button></div>
+    </fieldset>
+  </div>

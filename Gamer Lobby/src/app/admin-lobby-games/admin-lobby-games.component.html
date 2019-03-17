@@ -1,0 +1,28 @@
+<nav id="nav-bar">
+    <a routerLink="/admin-lobby"><button class = "navButton">Dashboard</button></a>
+    <button class = "navButton">Game List</button>
+  </nav>
+  <br>
+  <div class="search-box">
+      Player Search: <input type=text name="search" placeholder="search" [(ngModel)]="title">
+      <span class="admin-login"><label class="admin-label"><b>Administrator Mode</b>&nbsp;</label><a routerLink="/lobby"><button >Logout</button></a></span>
+      </div>
+  
+  <br>
+  
+  <table class="player-lobby">
+      <th>Title</th>
+      <th>Platform</th>
+      <th>Rating</th>
+      <th>Publisher</th>
+      <th>Release</th>
+      <th>Status</th>
+    <tr *ngFor="let game of games | gameFilter:title">
+      <td>{{ game.title }}</td>
+      <td>{{ game.platform }}</td>
+      <td>{{ game.rating }}</td>
+      <td>{{ game.publisher }}</td>
+      <td>{{ game.release }}</td>
+      <td>{{ game.status }}</td>
+    </tr>
+  </table>

@@ -1,0 +1,15 @@
+<div>
+  
+  <form class ="login-container">
+    <fieldset>
+      <legend>Admin Login</legend>
+      <label><b>Login:</b></label>
+      <input type="text" [(ngModel)] = "user" name="login"><br>
+      <br>
+      <label><b>Password:</b></label>
+      <input type="password" [(ngModel)] = "pass" name="password"><br>
+      <br>
+      <button (click) = "adminLogin()" id="button-login">Login</button>
+    </fieldset>
+  </form>
+</div>
